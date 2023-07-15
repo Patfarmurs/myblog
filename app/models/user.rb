@@ -6,12 +6,4 @@ class User < ApplicationRecord
   def show_recent_post
     posts.where(author_id: id).first(3)
   end
-
-  after_save :update_post_counter
-
-  private
-
-  def update_post_counter
-    author.increment!(:posts_counter)
-  end
 end
