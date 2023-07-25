@@ -1,4 +1,4 @@
-class PostsController < ApplicationControntroller
+class PostsController < ApplicationController
   before_action :fetch_author
 
   def index
