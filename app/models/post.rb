@@ -35,4 +35,12 @@ class Post < ApplicationRecord
   def update_posts_counter
     author.increment!(:posts_count)
   end
+
+  after_save :update_post_counter
+
+  private
+
+  def update_post_counter
+    author.increment!(:posts_counter)
+  end
 end
