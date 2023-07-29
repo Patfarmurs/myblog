@@ -1,3 +1,24 @@
-controllers-specs
-<h1>Here is a list of posts for users</h1>
-<h1>Here is a list of posts for users</h1>
+
+ <div class="comment-container">
+    <div class='comment-header'>
+        <h1 id="post-title">
+           "<%= @post.title%>" - <%= @user.name%>
+        </h1>
+        <div class="comment-like">
+            <span>Comments: <%= @post.comments_count%>, </span>
+            <span class="likes">Likes:<%= @post.likes_count%></span>
+        </div>
+    </div>
+    <p>
+        <%= @post.text%>
+    </p>
+ 
+            <div class="comments-container-post">
+                <% @comments=Post.find(@post.id).comments %>
+                    <% @comments.each do |comment| %>
+                        <div  id="single-comment">
+                            <span> <%= comment.author.name %> : <%= comment.text %></span>
+                        </div>
+                    <% end %>
+    </div>
+</div>

@@ -23,7 +23,7 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  after_save :update_posts_counter
+  after_create :update_posts_counter
 
   # returns the 5 most recent comments for a given post.
   def show_recent_comments
@@ -32,15 +32,9 @@ class Post < ApplicationRecord
 
   # updates the posts counter for a user
 
-  def update_posts_counter
-    author.increment!(:posts_count)
-  end
-
-  after_save :update_post_counter
-
   private
 
-  def update_post_counter
-    author.increment!(:posts_counter)
+  def update_posts_counter
+    author.increment!(:posts_count)
   end
 end
