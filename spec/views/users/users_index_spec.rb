@@ -24,12 +24,12 @@ RSpec.describe 'User', type: :feature, js: false do
     end
 
     it 'redirect to user show page when username is clicked' do
-      User.find_by(name: 'Tom')
-      # click_on 'Tom'
+      user = User.first
+      # click_on user.name
+      click_on('Jane', match: :first)
 
 
-      all('a', text: 'Tom')[0].click #ben added
-      users.each { |_user| expect(page).to have_current_path('/users/1') }
+      expect(page).to have_current_path("/users/#{user.id}")
     end
   end
 end

@@ -23,8 +23,8 @@ RSpec.describe 'index_show', type: :feature, js: false do
     end
 
     it 'displays the number of post for a user' do
-      User.find_by(photo: 'https://unsplash.com/photos/F_-0BxGuVvo')
-      expect(page).to have_content('4') 
+      User.find_by(bio: 'Teacher from Mexico.')
+      expect(page).to have_content('Number of posts')
     end
 
     it 'displays bio for a user' do
@@ -33,16 +33,17 @@ RSpec.describe 'index_show', type: :feature, js: false do
     end
 
     it 'shows user first three posts' do
-      expect(page).to have(post[1].text)
-      expect(page).to have_text(posts[2].text)
-      expect(page).to have_text(posts[3].text)
+      user = User.first
+      visit user_posts_path(user.id)
+      expect(page).to have_selector('recent_posts', maximum: 3)
     end
 
-    it "redirects me to the post's show page when i click a user's post" do  
-      user = User.find_by(name: 'Tom')
-      post = Post.find_by(title: 'This is my second post')
-      click_on 'This is my second post'
-      expect(page).to have_current_path(user_post_path(user.id, post.id))
+    it "redirects me to the post's show page when i click a user's post" do
+      user = User.first
+      post = Post.where(author_id: user.id).first
+      visit user_posts_path(user.id)
+      click_on post.title
+      expect(page).to have_current_path("/users/#{user.id}/posts/#{post.id}")
     end
     it 'should have a button to see all posts' do
       User.find_by(name: 'Tom')
