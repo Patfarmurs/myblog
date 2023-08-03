@@ -11,10 +11,10 @@
 
 
     <div class="recent-posts">
-        <% @posts.each do |post| %>
+        <% @posts.includes({comments: [:author]}, :likes).each do |post| %>
         <div class="one-comment">
-                <h2><%= post.title %>
-                </h2>
+        <%= link_to user_post_path(@user, post.id) do%>
+        <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class=""><h1><%= post.title %></h1></a>
                 <p id="post-text">
                     <%= post.text.split[0..80].join(" ") %>
                 </p>
@@ -26,11 +26,11 @@
                 <div class="comments-container">
                     <% post.show_recent_comments.each do |comment| %>
                         <div  id="single-comment"> 
-                            <span><%= comment.text %></span>
+                           <span><%= comment.author.name %> : <%= comment.text %></span>
                         </div>
                     <% end %>
             </div>
-            
+            <%end%>
             </div>
         <% end %>
     </div>
