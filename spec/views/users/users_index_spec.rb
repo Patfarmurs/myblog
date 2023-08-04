@@ -28,7 +28,6 @@ RSpec.describe 'User', type: :feature, js: false do
       # click_on user.name
       click_on('Jane', match: :first)
 
-
       expect(page).to have_current_path("/users/#{user.id}")
     end
   end
