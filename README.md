@@ -140,6 +140,13 @@ To run tests, run the following command:
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/Patrick-Mukula)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+👤 **AHMAD SAEED**
+
+- GitHub: [@ehmaddd](https://github.com/ehmaddd)
+- Twitter: [@ehmaddd_pk](https://twitter.com/ehmaddd_pk)
+- LinkedIn: [@ehmaddd](https://www.linkedin.com/in/ehmaddd/)
+
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
