@@ -138,6 +138,13 @@ To run tests, run the following command:
 -- GitHub: [Patfarmurs](https://github.com/Patfarmurs)
 - Twitter: [@MukulayengeP](https://twitter.com/MukulayengeP)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/Patrick-Mukula)
+
+👤 **AHMAD SAEED**
+
+- GitHub: [@ehmaddd](https://github.com/ehmaddd)
+- Twitter: [@ehmaddd_pk](https://twitter.com/ehmaddd_pk)
+- LinkedIn: [@ehmaddd](https://www.linkedin.com/in/ehmaddd/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
