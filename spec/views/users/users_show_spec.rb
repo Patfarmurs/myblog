@@ -10,7 +10,6 @@ RSpec.describe 'index_show', type: :feature, js: false do
   let!(:post3) { Post.create(author_id: user.id, title: 'kinetic', text: 'Boldly defined') }
   let!(:post4) { Post.create(author_id: user.id, title: 'halooo', text: 'Nice to meet you') }
 
-
   before(:each) do
     visit "#{base_url}/users/1"
   end
