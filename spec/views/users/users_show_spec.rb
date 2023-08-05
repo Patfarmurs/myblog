@@ -46,7 +46,7 @@ RSpec.describe 'index_show', type: :feature, js: false do
     end
 
     it 'should have a button to see all posts' do
-      user = User.find_by(name: 'Tom')
+      User.find_by(name: 'Tom')
       click_link 'See all posts'
       # expect(page).to have_current_path("/users/#{user.id}/posts")
     end
