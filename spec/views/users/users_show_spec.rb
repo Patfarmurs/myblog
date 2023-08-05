@@ -44,6 +44,13 @@ RSpec.describe 'index_show', type: :feature, js: false do
       click_on post.title
       expect(page).to have_current_path("/users/#{user.id}/posts/#{post.id}")
     end
+
+    it 'should have a button to see all posts' do
+      user= User.find_by(name: 'Tom')
+      click_link 'See all posts'
+      #expect(page).to have_current_path("/users/#{user.id}/posts")
+    end
+
     it 'should have a button to see all posts' do
       User.find_by(name: 'Tom')
       expect(page).to have_link('See all posts')

@@ -47,5 +47,13 @@ RSpec.describe 'User', type: :feature, js: false do
       click_link link
       expect(page).to have_current_path(user_post_path(@user.id, @first_post.id))
     end
+
+    it 'show section for pagination if more than 3 posts' do
+      4.times do
+        Post.create(author: @user, title: 'Hello', text: 'This is my first post')
+      end
+      visit user_posts_path(@user.id)
+      expect(page).to have_css('.pagination')
+    end
   end
 end

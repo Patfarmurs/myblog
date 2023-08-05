@@ -24,6 +24,14 @@ RSpec.describe 'User', type: :feature, js: false do
       expect(page).to have_content('Hello')
     end
 
+    it 'show who wrote the post' do
+      expect(page).to have_content(@user.name)
+    end
+
+    it 'show comment each commentor left' do
+      expect(page).to have_content(@comment.text)
+    end
+
     it 'shows the body of the post' do
       expect(page).to have_content('This is my first post')
     end
