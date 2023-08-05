@@ -36,20 +36,10 @@ RSpec.describe 'User', type: :feature, js: false do
       expect(page).to have_content('This is my first post')
     end
 
-    # it 'shows the first comment of the post' do
-    #   expect(page).to have_content(@comment.text)
-    # end
-
     it 'shows the number of likes && comments of the post' do
       user_post = @user.posts.find_by(id: @first_post.id)
       expect(page).to have_content(user_post.comments.count)
       expect(page).to have_content(user_post.likes.count)
     end
-
-    # it 'redirects me to post show page when I click on a post' do
-    #   link = @first_post.title
-    #   click_link link
-    #   expect(page).to have_current_path(user_post_path(@user.id, @first_post.id))
-    # end
   end
 end
