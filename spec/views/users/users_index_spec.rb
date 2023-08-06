@@ -25,9 +25,7 @@ RSpec.describe 'User', type: :feature, js: false do
 
     it 'redirect to user show page when username is clicked' do
       user = User.first
-      # click_on user.name
       click_on('Jane', match: :first)
-
       expect(page).to have_current_path("/users/#{user.id}")
     end
   end
